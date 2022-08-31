@@ -1,0 +1,25 @@
+{% extends 'projects/index.html' %}
+
+{% block detalles %}
+<a href="{{project.project_link}}">
+    <h1 class="fw-light">{{project.nombre}}</h1>
+</a>
+
+<p class="lead text-muted">
+    {{project.resumen}}
+</p>
+
+<img src="{{ project.imagen.url }}" height="400 " alt="Portada">
+
+<p>
+    <a href="{% url 'index' %}" class="btn btn-primary my-2">
+        Inicio
+    </a>
+</p>
+
+<p>
+    <a href="{{project.git_rep}}" aria-label="GitHub">
+        <i class="fa-brands fa-github fa-3x"></i>
+    </a>
+</p>
+{% endblock detalles %}
